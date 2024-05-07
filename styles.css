@@ -1,0 +1,53 @@
+.cradle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+    border: solid black;
+    max-width: 80%;
+    width: 100%;
+    height: auto;
+}
+
+.cradle div {
+    position: relative;
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    padding: 45px 0 0;
+}
+
+.cradle div:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 7px;
+    width: 1px;
+    height: 50px;
+    background: #ddd;
+}
+
+.cradle b {
+    display: inline-block;
+    position: relative;
+    background: #666;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    box-shadow: inset 0 2px 7px rgba(255,255,255,0.4),
+      inset 0 -2px 3px rgba(0,0,0,0.4),
+      0 0 1px #333;
+}
+
+.cradle b:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 15px;
+    left: 2px;
+    width: 11px;
+    height: 1px;
+    box-shadow: 0 20px 6px 1px rgba(0,0,0,0.3);
+}

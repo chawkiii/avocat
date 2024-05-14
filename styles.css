@@ -1,73 +1,276 @@
-/* styles.css */
+html {
+    scroll-behavior: smooth;
+}
 
-.cradle {
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: bisque;
+}
+
+#accueil {
+    background-image: url(/images/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 80vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+.menu {
+    position: fixed;
+    display: flex;
+    background: transparent;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.menu.scrolled {
+    background: black;
+    transition: background 0.3s ease;
+}
+
+.titles {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.main_title {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligner les fils en haut */
-    padding: 0;
+    align-items: center;
+    color: bisque;
     margin: 0 auto;
-    border: solid black;
-    max-width: 80%;
+    font-size: 60px;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    color: brown;
+    background: bisque;
+}
+
+nav a.active {
+    background-color: brown;
+    color: bisque;
+}
+
+.service a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.service a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: brown;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: red;
+}
+
+#about {
+    background-color: #ddd;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#about h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-content img {
+    display: flex;
     width: 100%;
     height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
-.cradle div:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 7px;
-    width: 1px;
-    height: 50px;
-    background: #ddd;
+.about-content p {
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 10px auto;
+    padding: 0;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-.cradle b:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 15px;
-    left: 2px;
-    width: 11px;
-    height: 1px;
-    box-shadow: 0 20px 6px 1px rgba(0,0,0,0.3);
+#service {
+    background-color: #ddd;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
-.cradle div {
-    position: relative;
-    flex: 0 0 auto;
-    width: 15px;
-    height: 15px;
-    margin-top: 0; /* Réduire la marge supérieure */
-    margin-bottom: 30px; /* Ajouter une marge inférieure pour séparer les boules */
+#service h2 {
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.cradle b {
+.service-container {
     display: flex;
-    position: relative;
-    background: #666;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    box-shadow: inset 0 2px 7px rgba(255,255,255,0.4),
-      inset 0 -2px 3px rgba(0,0,0,0.4),
-      0 0 1px #333;
-    margin-top: 50px; 
-    animation: bounce 2s infinite alternate;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-/* Ajout de l'animation bounce */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
+.service {
+    width: 220px;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #aaa;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
-.cradle div:nth-child(1) b,
-.cradle div:nth-child(3) b,
-.cradle div:nth-child(5) b {
-    animation: bounce 2s infinite alternate;
+
+.service h3 {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    height: 70px;
+}
+
+.service img {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px auto;
+    background: bisque;
+}
+
+.service p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.service a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.service a:hover {
+    text-decoration: underline;
+}
+
+#contact {
+    background-color: #ddd;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#contact h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#contact p {
+    color: #000;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: black;
+    color: bisque;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: bisque;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: brown;
 }

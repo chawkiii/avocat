@@ -1,4 +1,4 @@
-// navbar scroll bg change et changement du lien actif sur défilement
+// Gestion de la barre de navigation
 const navBar = document.querySelector('.menu');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
         navBar.classList.remove('scrolled');
     }
 
-    // Change active link on scroll
+    // Changer le lien actif au défilement
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
@@ -34,12 +34,13 @@ document.querySelectorAll('nav a').forEach(anchor => {
             behavior: 'smooth'
         });
 
-        // Change active link on click
+        // Changer le lien actif au clic
         document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
         this.classList.add('active');
     });
 });
 
+// Gestion des sections "Lire la suite" / "Lire moins"
 document.addEventListener("DOMContentLoaded", function() {
     const readMoreLinks = document.querySelectorAll(".read-more");
 
@@ -47,26 +48,25 @@ document.addEventListener("DOMContentLoaded", function() {
         link.addEventListener("click", function(event) {
             event.preventDefault();
             const service = this.closest(".service");
-            const description = service.querySelector(".service-description");
-            const moreText = service.querySelector(".service-more");
+            const descriptionFull = service.querySelector('.service-description-full');
 
             // Inverser la visibilité du texte et de "Lire la suite" / "Lire moins"
-            if (description.style.display === "none" || description.style.display === "") {
-                description.style.display = "block";
-                moreText.style.display = "none";
+            if (service.classList.contains('reduced')) {
+                service.classList.remove('reduced');
+                service.classList.add('full-width');
+                descriptionFull.style.display = 'flex'; // Afficher la description complète
                 this.textContent = "Lire moins";
             } else {
-                description.style.display = "none";
-                moreText.style.display = "block";
+                service.classList.remove('full-width');
+                service.classList.add('reduced');
+                descriptionFull.style.display = 'none'; // Cacher la description complète
                 this.textContent = "Lire la suite";
             }
         });
 
-        // Au chargement de la page, afficher le texte complet et masquer "Lire la suite"
+        // Initialiser l'état réduit au chargement de la page
         const service = link.closest(".service");
-        const description = service.querySelector(".service-description");
-        const moreText = service.querySelector(".service-more");
-        description.style.display = "block";
-        moreText.style.display = "none";
+        service.classList.add('reduced');
+        link.textContent = "Lire la suite"; // Initialise le texte du lien à "Lire la suite"
     });
 });

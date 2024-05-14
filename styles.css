@@ -82,6 +82,7 @@ nav ul li {
 
 nav a {
     text-decoration: none;
+    text-align: center;
     color: bisque;
     display: flex;
     justify-content: center;
@@ -114,20 +115,26 @@ nav a.active {
 }
 
 .cta-button {
-    display: inline-block;
+    display: flex;
+    height: 60px;
     padding: 10px 20px;
     margin-top: 20px;
     background-color: brown;
-    color: #fff;
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
     text-align: center;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    align-items: center;
 }
 
 .cta-button:hover {
-    background-color: red;
+    background-color: sandybrown;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 #about {
@@ -170,6 +177,13 @@ nav a.active {
     line-height: 1.6;
 }
 
+.socials{
+    color: blue;
+    font-weight: bold;
+    border: solid green;
+    margin: 10px auto;
+}
+
 #service {
     background-color: #ddd;
     padding: 40px;
@@ -189,17 +203,34 @@ nav a.active {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 10px;
 }
 
 .service {
-    width: 220px;
-    margin-bottom: 40px;
+    width: 250px;
     padding: 10px;
     background-color: #aaa;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    border: solid red;
 }
+.service-description-full{
+    display: none;
+}
+
+.full-width {
+    width: 100vw !important; /* 100% de la largeur de la fenêtre */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999; /* Assure que le contenu est au-dessus de tout le reste */
+    background-color: #fff; /* Fond blanc pour le contraste */
+    padding: 20px; /* Ajoutez un padding pour éviter que le contenu ne touche les bords */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
+}
+
+
 
 .service h3 {
     display: flex;

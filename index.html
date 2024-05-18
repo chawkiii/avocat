@@ -11,18 +11,31 @@
 <body>
     <header id="accueil">
         <nav class="menu">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='burger-container' for="menu-toggle">
+                <div class='burger-element'></div>
+            </label>
             <ul>
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#about">A propos de nous</a></li>
                 <li><a href="#service">Nos Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="language-switcher">
+                    <select id="language-select">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </li>
             </ul>
         </nav>
+    
         <div class="titles">
             <h1 class="main_title">MAITRE FETHI</h1>
             <h2 class="main_title">Avocat à la cour</h2>
         </div>
     </header>
+    
 
     <main>
         <section id="about">
@@ -125,22 +138,16 @@
                 <p>Vous avez des questions ou souhaitez en savoir plus sur nos services ? N'hésitez pas à nous contacter via le formulaire ci-dessous ou à nous appeler directement.</p>
                 <div class="form-map-container">
                     
-                    <form action="submit-form.php" method="POST">
-                        
+                    <form action="mailto:fethi@zegadi.com" method="POST" enctype="text/plain">
+                        <h3>Ecrivez nous</h3>
                         <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
-                        
-                        
                         <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
-                        
-                        
                         <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" required>
-                        
-                        
                         <textarea id="message" name="message" rows="4" placeholder="Entrez votre message" required></textarea>
-                        
-    
-                        <button type="submit">Envoyer</button>
+                        <input type="submit" value="Envoyer">
                     </form>
+                    
+
                     <div class="map-container">
                         <h3>Notre adresse</h3>
                         <div id="map">
@@ -154,6 +161,11 @@
     </main>
 
     <footer>
+        <div class="contact-details">
+            <p>Téléphone: +123456789</p>
+            <p>Adresse: 123 Rue de la Loi, 75000 Paris, France</p>
+            <p>Email: contact@maitrefathi.com</p>
+        </div>
         <p>&copy; 2024 Maître Fathi. Tous droits réservés.</p>
     </footer>
 

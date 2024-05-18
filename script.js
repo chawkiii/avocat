@@ -12,7 +12,6 @@ function handleNavbar() {
         } else {
             navBar.classList.remove('scrolled');
         }
-        // Changer le lien actif au défilement
         updateActiveNavLink();
     });
 }
@@ -35,10 +34,11 @@ function handleNavLinks() {
 
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section');
+    const navbarHeight = document.querySelector('.menu').offsetHeight;
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
         const navLink = document.querySelector(`nav a[href="#${section.id}"]`);
-        if (rect.top <= 50 && rect.bottom >= 50) {
+        if (rect.top <= navbarHeight && rect.bottom > navbarHeight) {
             navLink.classList.add('active');
         } else {
             navLink.classList.remove('active');
@@ -53,19 +53,27 @@ function handleReadMoreLinks() {
             const service = this.closest(".service");
             const descriptionFull = service.querySelector('.service-description-full');
             const description = service.querySelector('.service-description');
+            const readMoreContainer = this.closest('.read-more-container');
+            
             if (service.classList.contains('reduced')) {
                 service.classList.remove('reduced');
                 service.classList.add('full-width');
                 description.style.display = 'none';
-                descriptionFull.style.display = 'flex'; // Afficher la description complète
+                descriptionFull.style.display = 'flex';
                 this.textContent = "Lire moins";
+                document.body.style.overflow = 'hidden'; // Prevent scrolling of the main page
             } else {
                 service.classList.remove('full-width');
                 service.classList.add('reduced');
                 description.style.display = 'block';
-                descriptionFull.style.display = 'none'; // Cacher la description complète
+                descriptionFull.style.display = 'none';
                 this.textContent = "Lire la suite";
+                document.body.style.overflow = ''; // Re-enable scrolling of the main page
             }
+
+            // Ensure the "Lire moins" link remains at the bottom
+            readMoreContainer.style.display = 'flex';
+            readMoreContainer.style.justifyContent = 'center';
         });
     });
 }

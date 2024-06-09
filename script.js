@@ -14,38 +14,23 @@ function handleLanguageSwitcher() {
 }
 
 function changeLanguage(lang) {
-    const translations = {
-        fr: {
-            alert: 'La langue a été changée en français.',
-            dir: 'ltr',
-            readMore: 'Lire la suite',
-            readLess: 'Lire moins'
-        },
-        en: {
-            alert: 'Language changed to English.',
-            dir: 'ltr',
-            readMore: 'Read more',
-            readLess: 'Read less'
-        },
-        ar: {
-            alert: 'تم تغيير اللغة إلى العربية.',
-            dir: 'rtl',
-            readMore: 'اقرأ المزيد',
-            readLess: 'اقرأ أقل'
-        }
-    };
-
-    if (translations[lang]) {
-        alert(translations[lang].alert);
-        document.body.setAttribute('dir', translations[lang].dir);
-        // Changez le contenu textuel ici en utilisant les traductions appropriées
-        document.querySelectorAll('.read-more').forEach(link => {
-            link.textContent = translations[lang].readMore;
-        });
-        document.querySelectorAll('.read-less').forEach(link => {
-            link.textContent = translations[lang].readLess;
-        });
-    }
+    // Récupérer les données à partir du fichier JSON
+    fetch(`data/${lang}.json`)
+        .then(response => response.json())
+        .then(data => {
+            // Mettre à jour les éléments de la page avec les traductions
+            document.querySelectorAll('.translation').forEach(element => {
+                const key = element.dataset.translationKey;
+                if (data[key]) {
+                    element.textContent = data[key];
+                }
+            });
+            // Afficher une alerte pour confirmer le changement de langue
+            alert(data.alert);
+            // Mettre à jour la direction du texte pour les langues qui nécessitent RTL
+            document.body.setAttribute('dir', data.dir);
+        })
+        .catch(error => console.error('Error fetching language data:', error));
 }
 
 function handleNavbar() {
@@ -115,16 +100,15 @@ function handleReadMoreLinks() {
                 document.body.classList.remove('no-scroll');
             }
 
-            // Ensure the "Lire moins" link remains at the bottom
+            // Assurer que le lien "Lire moins" reste en bas
             readMoreContainer.style.display = 'flex';
             readMoreContainer.style.justifyContent = 'center';
         });
     });
 }
 
-
 function handleBurgerMenu() {
-    document.querySelector('.burger').addEventListener('click', function() {
+    document.querySelector('.burger-container').addEventListener('click', function() {
         document.querySelector('.menu').classList.toggle('active');
     });
 }

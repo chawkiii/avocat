@@ -29,50 +29,59 @@ function initializePageFunctionality() {
     handleBurgerMenu();
 }
 
+
+
+// Function to generate HTML for services based on the provided data
 function generateServiceHTML(serviceData) {
     const serviceContainer = document.querySelector('#service .service-container');
     serviceContainer.innerHTML = ''; // Clear the container to avoid duplication
 
     if (serviceData && serviceData.length > 0) { // Check if serviceData is defined and not empty
         serviceData.forEach(service => {
-            // Créer l'élément de service
+            // Create the service element
             const serviceElement = document.createElement('div');
             serviceElement.classList.add('service');
 
-            // Créer le titre du service
+            // Create the service title
             const titleElement = document.createElement('h3');
             titleElement.textContent = service.title;
             serviceElement.appendChild(titleElement);
 
-            // Créer la description courte du service
+            // Create the short description of the service
             const descriptionElement = document.createElement('div');
             descriptionElement.classList.add('service-description');
-            const shortDescriptionParagraphs = service.description_short;
-            shortDescriptionParagraphs.forEach(paragraph => {
+            if (Array.isArray(service.description_short)) {
+                service.description_short.forEach(paragraph => {
+                    const p = document.createElement('p');
+                    p.textContent = paragraph;
+                    descriptionElement.appendChild(p);
+                });
+            } else {
+                // If service.description_short is a string, create a paragraph with its content
                 const p = document.createElement('p');
-                p.textContent = paragraph;
+                p.textContent = service.description_short;
                 descriptionElement.appendChild(p);
-            });
+            }
             serviceElement.appendChild(descriptionElement);
 
-            // Créer la description longue du service
+
+            // Create the full description of the service
             const fullDescriptionElement = document.createElement('div');
             fullDescriptionElement.classList.add('service-description-full');
-            const longDescriptionParagraphs = service.description_long;
-            longDescriptionParagraphs.forEach(paragraph => {
+            service.description_long.forEach(paragraph => {
                 const p = document.createElement('p');
                 p.textContent = paragraph;
                 fullDescriptionElement.appendChild(p);
             });
             serviceElement.appendChild(fullDescriptionElement);
 
-            // Créer l'image du service
+            // Create the image of the service
             const imageElement = document.createElement('img');
-            imageElement.src = service.image; // Assurez-vous que vos données JSON contiennent les chemins d'accès corrects aux images
+            imageElement.src = service.image; // Make sure your JSON data contains correct paths to the images
             imageElement.alt = service.title;
             serviceElement.appendChild(imageElement);
 
-            // Créer le lien "Lire la suite"
+            // Create the "Read more" link
             const readMoreContainer = document.createElement('div');
             readMoreContainer.classList.add('read-more-container');
             const readMoreLink = document.createElement('a');
@@ -81,12 +90,12 @@ function generateServiceHTML(serviceData) {
             readMoreContainer.appendChild(readMoreLink);
             serviceElement.appendChild(readMoreContainer);
 
-            // Ajouter le service à la page
+            // Add the service to the page
             serviceContainer.appendChild(serviceElement);
         });
     } else {
-        // Ajouter un message ou une action de secours si aucune donnée de service n'est disponible
-        serviceContainer.textContent = "Aucune donnée de service disponible.";
+        // Add a fallback message or action if no service data is available
+        serviceContainer.textContent = "No service data available.";
     }
 }
 

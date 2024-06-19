@@ -40,6 +40,7 @@ body {
     align-items: center;
     font-size: 15px;
     font-weight: bold;
+    z-index: 99;
 }
 
 .language-switcher {
@@ -70,7 +71,7 @@ body {
 }
 
 .menu.scrolled {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0);
     transition: background 0.3s ease;
 }
 
@@ -259,9 +260,9 @@ nav a.active {
     display: flex;
     height: 60px;
     padding: 10px 20px;
-    margin-top: 20px;
+    margin: 50px auto 20px auto;
+    color: bisque;
     background-color: brown;
-    color: white;
     text-decoration: none;
     text-align: center;
     border-radius: 20px;
@@ -270,12 +271,13 @@ nav a.active {
     transition: background-color 0.3s ease;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button:hover {
-    background-color: sandybrown;
-    color: #000;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    background-color: bisque;
+    color: brown;
+    box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 #about {
@@ -296,6 +298,8 @@ nav a.active {
 .about-content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-content img {
@@ -319,49 +323,86 @@ nav a.active {
 }
 
 .socials {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 50px;
-    min-width: 300px;
-    margin: 10px auto 0 auto;
+    display: inline-flex;
+    list-style: none;
 }
-.socials .fa {
-    font-size: 40px;
-    width: 50px; 
-    padding: 10px; 
+.socials .icon{
+    position: relative;
+    background: #fff;
+    color: #000;
     border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.fa {
-    margin-top: 25px;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  .fa:hover {
-      opacity: 0.7;
-  }
-  
-  .fa-facebook {
+.socials .tooltip{
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #000;
+    padding: 5px 8px;
+    border-radius: 3px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.socials .tooltip ::before{
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.socials .icon:hover .tooltip{
+    top: -30px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.socials .icon:hover span,
+.socials .icon:hover .tooltip{
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.socials .facebook:hover,
+.socials .facebook:hover .tooltip,
+.socials .facebook:hover .tooltip::before{
     background: #3B5998;
-    color: white;
-  }
-  .fa-google {
-    background: #c71610;
-    color: white;
-  }
-  .fa-linkedin {
+    color: #fff;
+}
+.socials .linkedin:hover,
+.socials .linkedin:hover .tooltip,
+.socials .linkedin:hover .tooltip::before{
     background: #0a66c2;
-    color: white;
-  }
-  .fa-whatsapp {
+    color: #fff;
+}
+.socials .whatsapp:hover,
+.socials .whatsapp:hover .tooltip,
+.socials .whatsapp:hover .tooltip::before{
     background: #075E54;
-    color: white;
-    font-size: 5em;
-  }
+    color: #fff;
+}
+.socials .gmail:hover,
+.socials .gmail:hover .tooltip,
+.socials .gmail:hover .tooltip::before{
+    background: #c71610;
+    color: #fff;
+}
 
 
 #service {
@@ -418,6 +459,7 @@ nav a.active {
 
 .read-more:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .service-description-full {
@@ -569,7 +611,7 @@ form {
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 50%;
+    width: 70%;
 }
 form h3{
     font-size: 1.5em;
@@ -607,9 +649,8 @@ form button:hover {
 }
 
 .map-container {
-    margin-top: 30px;
-    width: 45%;
-    
+    width: 25%;
+    margin-top: -10px;
 }
 
 .map-container h3 {
@@ -620,7 +661,7 @@ form button:hover {
 
 #map iframe {
     width: 100%;
-    height: 380px;
+    height: 335px;
     border: 0;
     border-radius: 10px;
 }

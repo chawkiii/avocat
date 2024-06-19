@@ -12,50 +12,59 @@
       "With a solid experience in the legal field, I have helped numerous national and international companies navigate through legal complexities and achieve their business goals. My expertise in business law and international law enables me to provide valuable legal advice and strategic solutions to address your business challenges.",
       "Whether you need legal assistance for company formation, negotiation of international contracts, resolution of commercial disputes, or any other legal issue, I am here to accompany you at every step of the process. My goal is to provide you with effective legal solutions and save you time and money.",
       "Feel free to contact me for an initial consultation. I look forward to putting my legal expertise at your service and helping you successfully achieve your business goals."
-    ]
+    ],
+    "contact_button": "contact us now !"
   },
   "services": {
     "title": "Our Services",
     "services": [
       {
         "title": "Legal Advice in Business Law",
+        "image": "images/conseil.jpg",
         "description_short": "As a lawyer specializing in business law, I provide comprehensive legal advice to meet the legal needs of your business...",
         "description_long": [
           "As a lawyer specializing in business law, I provide comprehensive legal advice to meet the legal needs of your business.",
           "My approach is to work closely with you and your team to understand the specific challenges your business is facing. Whether you are a growing startup or an established company, I am here to offer strategic legal advice tailored to your needs.",
           "From drafting and negotiating contracts to resolving commercial disputes, I am here to guide you through every step of the process. My extensive experience in business law enables me to provide you with informed advice and practical solutions to protect your business interests and minimize legal risks.",
           "By collaborating with me, you will benefit from a dedicated and competent legal partner, ready to tackle the legal challenges your business is facing. Contact me today to discuss how I can help you confidently achieve your business goals."
-        ]
+        ],
+        "read_more": "Read more"
       },
       {
         "title": "International Transactions and Commercial Law",
+        "image": "images/international.jpg",
         "description_short": "Are you involved in international transactions or global business activities? With my specialized skills in international commercial law, I am here to provide you with legal expertise tailored to your needs...",
         "description_long": [
           "Are you involved in international transactions or global business activities? With my specialized skills in international commercial law, I am here to provide you with legal expertise tailored to your needs.",
           "My proactive and strategic approach will help you successfully navigate the complex landscape of international transactions. Whether you are looking to conclude cross-border business agreements, negotiate international contracts, or resolve global commercial disputes, I am here to advise you at every step of the process.",
           "By collaborating with me, you will benefit from a dedicated legal partner who understands the nuances of international business law. My goal is to help you minimize legal risks while maximizing business opportunities on the global stage.",
           "Contact me today to discuss how I can help you successfully complete your international transactions and protect your business interests on the global stage."
-        ]
+        ],
+        "read_more": "Read more"
       },
       {
         "title": "Resolution of Commercial Disputes",
+        "image": "images/about02.jpg",
         "description_short": "Commercial disputes can arise at any time in the business world. As a lawyer specializing in commercial dispute resolution, I am here to help you find effective solutions to resolve disputes and protect your business interests...",
         "description_long": [
           "Commercial disputes can arise at any time in the business world. As a lawyer specializing in commercial dispute resolution, I am here to help you find effective solutions to resolve disputes and protect your business interests.",
           "My dispute resolution strategy focuses on finding pragmatic and cost-effective solutions. I work closely with you to assess your legal options, develop strong negotiation strategies, and represent your interests in court if necessary.",
           "Whether you are facing contractual disputes, shareholder disputes, or other commercial conflicts, I am here to provide you with knowledgeable legal advice and effective representation. My goal is to help you quickly resolve disputes while preserving your business relationships and reputation.",
           "By collaborating with me, you will benefit from a personalized and proactive approach to resolving your commercial disputes. Contact me today to discuss how I can help you achieve a satisfactory resolution of your commercial disputes."
-        ]
+        ],
+        "read_more": "Read more"
       },
       {
         "title": "Protection of Intellectual Property Rights",
+        "image": "images/propriete-intellectuelle3.jpg",
         "description_short": "Ensure that your creations, inventions, and brands are protected by law. My expertise in intellectual property law guarantees you optimal protection of your rights...",
         "description_long": [
           "Ensure that your creations, inventions, and brands are protected by law. My expertise in intellectual property law guarantees you optimal protection of your rights.",
           "I help you secure and defend your intellectual property rights, whether for patents, trademarks, copyrights, or trade secrets. My goal is to provide you with strategic advice to maximize the value of your intellectual assets and minimize the risks of litigation.",
           "By working with me, you will benefit from personalized support for the filing and management of your intellectual property rights. I also offer assistance in case of infringement of your rights, to ensure that your interests are effectively and proactively protected.",
           "Contact me today to discuss your intellectual property needs and discover how I can help you protect your innovations and enforce your rights."
-        ]
+        ],
+        "read_more": "Read more"
       }
     ]
   },

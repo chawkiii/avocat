@@ -15,11 +15,11 @@
             <label class='burger-container' for="menu-toggle">
                 <div class='burger-element'></div>
             </label>
-            <ul>
-                <li><a href="#accueil" data-translation-key="menu.home"></a></li>
-                <li><a href="#about" data-translation-key="menu.about_us"></a></li>
-                <li><a href="#service" data-translation-key="menu.services"></a></li>
-                <li><a href="#contact" data-translation-key="menu.contact"></a></li>
+            <ul class="menu_nav">
+                <li><a href="#accueil" data-translation-key="menu.home">Accueil</a></li>
+                <li><a href="#about" data-translation-key="menu.about_us">À propos</a></li>
+                <li><a href="#service" data-translation-key="menu.services">Services</a></li>
+                <li><a href="#contact" data-translation-key="menu.contact">Contact</a></li>
                 <li class="language-switcher">
                     <select id="language-select">
                         <option value="fr" data-translation-key="menu.french">Français</option>
@@ -29,7 +29,7 @@
                 </li>
             </ul>
         </nav>
-    
+
         <div class="titles">
             <h1 class="main_title">MAITRE FETHI</h1>
             <h2 class="main_title">Avocat à la cour</h2>
@@ -47,12 +47,32 @@
                 <p data-translation-key="about_us.content.2"></p>
                 <p data-translation-key="about_us.content.3"></p>
                 <a href="#contact" class="cta-button" data-translation-key="about_us.contact_button"></a>
-                <div class="socials">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-google"></a>
-                    <a href="#" class="fa fa-linkedin"></a>
-                    <a href="#" class="fa fa-whatsapp"></a>
-                </div>            
+                <ul class="socials">
+                    <a href="https://www.facebook.com/">
+                        <li class="icon facebook">
+                            <span class="tooltip">Facebook</span>
+                            <span><i class="fa fa-facebook"></i></span>
+                        </li>
+                    </a>
+                    <a href="https://www.whatsapp.com/">
+                        <li class="icon whatsapp">
+                            <span class="tooltip">Whatsapp</span>
+                            <span><i class="fa fa-whatsapp"></i></span>
+                        </li>
+                    </a>
+                    <a href="https://www.google.com/">
+                        <li class="icon gmail">
+                            <span class="tooltip">Gmail</span>
+                            <span><i class="fa fa-google"></i></span>    
+                        </li>
+                    </a>
+                    <a href="https://www.linkedin.com/">
+                        <li class="icon linkedin">
+                            <span class="tooltip">Linkedin</span>
+                            <span><i class="fa fa-linkedin"></i></span>
+                        </li>
+                    </a>
+                </ul>            
             </div>
         </section>
 
@@ -61,15 +81,16 @@
             <div class="service-container">
                 <div class="service">
                     <h3 data-translation-key="services.services.0.title"></h3>
+                    <img data-translation-key="services.services.0.image" alt="Service Image 1">
                     <div class="service-description">
                         <p data-translation-key="services.services.0.description.0"></p>
                         <p data-translation-key="services.services.0.description.1"></p>
                         <p data-translation-key="services.services.0.description.2"></p>
                         <p data-translation-key="services.services.0.description.3"></p>
                     </div>
-                    <img src="images/conseil.jpg" alt="Service Image 1">
+
                     <div class="read-more-container">
-                        <a class="read-more" href="#">Lire la suite</a>
+                        <a class="read-more" data-translation-key="services.services.0.read_more" href="#"></a>
                     </div>
                 </div>
                 <div class="service">
@@ -80,9 +101,9 @@
                         <p data-translation-key="services.services.1.description.2"></p>
                         <p data-translation-key="services.services.1.description.3"></p>
                     </div>
-                    <img src="images/international.jpg" alt="Service Image 2">
+                    <img data-translation-key="services.services.1.image" alt="Service Image 2">
                     <div class="read-more-container">
-                        <a class="read-more" href="#">Lire la suite</a>
+                        <a class="read-more" data-translation-key="services.services.1.read_more" href="#"></a>
                     </div>
                 </div>
                 <div class="service">
@@ -93,9 +114,9 @@
                         <p data-translation-key="services.services.2.description.2"></p>
                         <p data-translation-key="services.services.2.description.3"></p>
                     </div>
-                    <img src="images/about02.jpg" alt="Service Image 3">
+                    <img data-translation-key="services.services.2.image" alt="Service Image 3">
                     <div class="read-more-container">
-                        <a class="read-more" href="#">Lire la suite</a>
+                        <a class="read-more" data-translation-key="services.services.2.read_more" href="#"></a>
                     </div>
                 </div>
                 <div class="service">
@@ -106,9 +127,9 @@
                         <p data-translation-key="services.services.3.description.2"></p>
                         <p data-translation-key="services.services.3.description.3"></p>
                     </div>
-                    <img src="images/propriete-intellectuelle3.jpg" alt="Service Image 4">
+                    <img data-translation-key="services.services.3.image" alt="Service Image 4">
                     <div class="read-more-container">
-                        <a class="read-more" href="#">Lire la suite</a>
+                        <a class="read-more" data-translation-key="services.services.3.read_more" href="#"></a>
                     </div>
                 </div>
             </div>
@@ -136,6 +157,38 @@
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18429.192440790997!2d3.0084003188021784!3d36.73687181900608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fadf13159175b%3A0x32a4f51b6f28f822!2zUmlzaWRhbmNlIGxlcyByb3VzaWVycyDYpdmC2KfZhdipINin2YTZiNix2YjYrw!5e0!3m2!1sfr!2sdz!4v1715987502425!5m2!1sfr!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></iframe>
                         </div>
                     </div>
+
+                    <ul class="socials">
+                        <a href="https://www.facebook.com/">
+                            <li class="icon facebook">
+                                <span class="tooltip">Facebook</span>
+                                <span><i class="fa fa-facebook"></i></span>
+                            </li>
+                        </a>
+                        <a href="https://www.whatsapp.com/">
+                            <li class="icon whatsapp">
+                                <span class="tooltip">Whatsapp</span>
+                                <span><i class="fa fa-whatsapp"></i></span>
+                            </li>
+                        </a>
+                        <a href="https://www.google.com/">
+                            <li class="icon gmail">
+                                <span class="tooltip">Gmail</span>
+                                <span><i class="fa fa-google"></i></span>    
+                            </li>
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <li class="icon linkedin">
+                                <span class="tooltip">Linkedin</span>
+                                <span><i class="fa fa-linkedin"></i></span>
+                            </li>
+                        </a>
+                    </ul>   
+
+
+
+
+                       
                 </div>
                 
             </div>

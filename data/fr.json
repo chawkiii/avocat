@@ -12,50 +12,59 @@
       "Avec une expérience solide dans le domaine juridique, j'ai aidé de nombreuses entreprises nationales et internationales à naviguer à travers les complexités juridiques et à atteindre leurs objectifs commerciaux. Mon expertise en droit des affaires et en droit international me permet de vous fournir des conseils juridiques précieux et des solutions stratégiques pour résoudre vos défis commerciaux.",
       "Que vous ayez besoin d'une assistance juridique pour la formation d'une société, la négociation de contrats internationaux, la résolution de litiges commerciaux ou toute autre question juridique, je suis là pour vous accompagner à chaque étape du processus. Mon objectif est de vous offrir des solutions juridiques efficaces et de vous faire gagner du temps et de l'argent.",
       "N'hésitez pas à me contacter pour une consultation initiale. Je suis impatient de mettre mon expertise juridique à votre service et de vous aider à atteindre vos objectifs commerciaux avec succès."
-    ]
+    ],
+    "contact_button": "contactez nous maintenant !"
   },
   "services": {
     "title": "Nos Services",
     "services": [
       {
         "title": "Conseil juridique en droit des affaires",
+        "image": "images/conseil.jpg",
         "description_short": "En tant qu'avocat spécialisé en droit des affaires, je fournis un service de conseil juridique complet pour répondre aux besoins juridiques de votre entreprise...",
         "description_long": [
           "En tant qu'avocat spécialisé en droit des affaires, je fournis un service de conseil juridique complet pour répondre aux besoins juridiques de votre entreprise.",
           "Mon approche consiste à travailler en étroite collaboration avec vous et votre équipe pour comprendre les défis spécifiques auxquels votre entreprise est confrontée. Que vous soyez une start-up en pleine croissance ou une entreprise établie, je suis là pour vous offrir des conseils juridiques stratégiques adaptés à vos besoins.",
           "De la rédaction et de la négociation de contrats à la résolution de litiges commerciaux, je suis là pour vous guider à chaque étape du processus. Mon expérience approfondie en droit des affaires me permet de vous fournir des conseils éclairés et des solutions pratiques pour protéger vos intérêts commerciaux et minimiser les risques juridiques.",
           "En collaborant avec moi, vous bénéficierez d'un partenaire juridique dévoué et compétent, prêt à relever les défis juridiques auxquels votre entreprise est confrontée. Contactez-moi dès aujourd'hui pour discuter de la manière dont je peux vous aider à atteindre vos objectifs commerciaux avec confiance et tranquillité d'esprit."
-        ]
+        ],
+        "read_more": "lire plus"
       },
       {
         "title": "Transactions internationales et droit commercial",
+        "image": "images/international.jpg",
         "description_short": "Vous êtes impliqué dans des transactions internationales ou des activités commerciales à l'échelle mondiale ? Avec mes compétences spécialisées en droit commercial international, je suis là pour vous fournir une expertise juridique adaptée à vos besoins.",
         "description_long": [
           "Vous êtes impliqué dans des transactions internationales ou des activités commerciales à l'échelle mondiale ? Avec mes compétences spécialisées en droit commercial international, je suis là pour vous fournir une expertise juridique adaptée à vos besoins.",
           "Mon approche proactive et stratégique vous aidera à naviguer avec succès dans le paysage complexe des transactions internationales. Que vous cherchiez à conclure des accords commerciaux transfrontaliers, à négocier des contrats internationaux ou à résoudre des litiges commerciaux à l'échelle mondiale, je suis là pour vous conseiller à chaque étape du processus.",
           "En collaborant avec moi, vous bénéficierez d'un partenaire juridique dévoué qui comprend les nuances du droit international des affaires. Mon objectif est de vous aider à minimiser les risques juridiques tout en maximisant les opportunités commerciales à l'échelle internationale.",
           "Contactez-moi dès aujourd'hui pour discuter de la manière dont je peux vous aider à mener à bien vos transactions internationales et à protéger vos intérêts commerciaux sur la scène mondiale."
-        ]
+        ],
+        "read_more": "lire plus"
       },
       {
         "title": "Résolution de litiges commerciaux",
+        "image": "images/about02.jpg",
         "description_short": "Les litiges commerciaux peuvent survenir à tout moment dans le monde des affaires. En tant qu'avocat spécialisé dans la résolution de litiges commerciaux, je suis là pour vous aider à trouver des solutions efficaces pour résoudre les différends et protéger vos intérêts commerciaux.",
         "description_long": [
           "Les litiges commerciaux peuvent survenir à tout moment dans le monde des affaires. En tant qu'avocat spécialisé dans la résolution de litiges commerciaux, je suis là pour vous aider à trouver des solutions efficaces pour résoudre les différends et protéger vos intérêts commerciaux.",
           "Ma stratégie de résolution de litiges est axée sur la recherche de solutions pragmatiques et rentables. Je travaille en étroite collaboration avec vous pour évaluer vos options légales, élaborer des stratégies de négociation solides et représenter vos intérêts devant les tribunaux si nécessaire.",
           "Que vous soyez confronté à des litiges contractuels, des différends entre actionnaires ou d'autres conflits commerciaux, je suis là pour vous fournir des conseils juridiques avisés et une représentation efficace. Mon objectif est de vous aider à résoudre rapidement les litiges tout en préservant vos relations commerciales et votre réputation.",
           "En collaborant avec moi, vous bénéficierez d'une approche personnalisée et proactive pour résoudre vos litiges commerciaux. Contactez-moi dès aujourd'hui pour discuter de la manière dont je peux vous aider à atteindre une résolution satisfaisante de vos litiges commerciaux."
-        ]
+        ],
+        "read_more": "lire plus"
       },
       {
         "title": "Protection des droits de propriété intellectuelle",
+        "image": "images/propriete-intellectuelle3.jpg",
         "description_short": "Assurez-vous que vos créations, inventions et marques sont protégées par la loi. Mon expertise en droit de la propriété intellectuelle vous garantit une protection optimale de vos droits.",
         "description_long": [
           "Assurez-vous que vos créations, inventions et marques sont protégées par la loi. Mon expertise en droit de la propriété intellectuelle vous garantit une protection optimale de vos droits.",
           "Je vous aide à sécuriser et à défendre vos droits de propriété intellectuelle, que ce soit pour des brevets, des marques, des droits d'auteur ou des secrets commerciaux. Mon objectif est de vous fournir des conseils stratégiques pour maximiser la valeur de vos actifs intellectuels et minimiser les risques de litiges.",
           "En travaillant avec moi, vous bénéficierez d'un accompagnement personnalisé pour le dépôt et la gestion de vos droits de propriété intellectuelle. Je vous offre également une assistance en cas de violation de vos droits, pour garantir que vos intérêts sont protégés de manière efficace et proactive.",
           "Contactez-moi dès aujourd'hui pour discuter de vos besoins en matière de propriété intellectuelle et découvrir comment je peux vous aider à protéger vos innovations et à faire valoir vos droits."
-        ]
+        ],
+        "read_more": "lire plus"
       }
     ]
   },
@@ -78,4 +87,3 @@
     "copyright": "© 2024 Maître Fathi. Tous droits réservés."
   }
 }
-

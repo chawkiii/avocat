@@ -2,12 +2,18 @@ document.addEventListener("DOMContentLoaded", function() {
     // Générer langue par défaut (français) au chargement de la page
     generateLanguageData('fr');
 
+    activateHomeLink(); // Activer "Accueil" par défaut
+    updateActiveNavLink(); // Mettre à jour les liens actifs
+
     // Ajouter un gestionnaire d'événements pour le changement de langue
     document.getElementById('language-select').addEventListener('change', function() {
         const selectedLang = this.value;
         generateLanguageData(selectedLang);
     });
 });
+
+// Écouter le défilement de la fenêtre pour mettre à jour les liens actifs
+window.addEventListener('scroll', updateActiveNavLink);
 
 function generateLanguageData(lang) {
     // Charger les données de langue à partir du fichier JSON par défaut
@@ -53,9 +59,8 @@ function updatePageWithTranslations(data) {
     // Mettre à jour les sections contact
     const contactSection = document.getElementById('contact');
     contactSection.querySelector('h2').textContent = data.contact.title;
-    contactSection.querySelectorAll('.contact-content p').forEach((p, index) => {
-        p.textContent = data.contact.content[index];
-    });
+    contactSection.querySelector('.contact-content p').textContent = data.contact.content;
+    
 
     // Mettre à jour les détails de contact dans le pied de page
     const contactDetails = document.querySelector('footer .contact-details');
@@ -77,6 +82,46 @@ function handleNavbar() {
         }
         updateActiveNavLink();
     });
+}
+
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section');
+    const navbarHeight = document.querySelector('.menu').offsetHeight;
+    let activeSectionId = null;
+
+    // Trouver la section active (celle qui est la plus proche du haut de la fenêtre)
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= navbarHeight && rect.bottom > navbarHeight) {
+            activeSectionId = section.id;
+        }
+    });
+
+    // Mettre à jour les classes des liens de navigation
+    sections.forEach(section => {
+        const navLink = document.querySelector(`nav a[href="#${section.id}"]`);
+        if (section.id === activeSectionId) {
+            navLink.classList.add('active');
+        } else {
+            navLink.classList.remove('active');
+        }
+    });
+
+    // Condition pour ajouter ou retirer la classe 'active' du lien "Accueil"
+    const homeLink = document.querySelector('nav a[data-translation-key="menu.home"]');
+    const aboutSection = document.getElementById('about');
+    
+    if (window.scrollY < aboutSection.offsetTop - navbarHeight) {
+        homeLink.classList.add('active');
+    } else {
+        homeLink.classList.remove('active');
+    }
+}
+
+// Fonction pour activer "Accueil" par défaut
+function activateHomeLink() {
+    const homeLink = document.querySelector('nav a[data-translation-key="menu.home"]');
+    homeLink.classList.add('active');
 }
 
 
@@ -113,6 +158,8 @@ function handleNavLinks() {
         });
     });
 }
+
+
 
 
 
@@ -173,7 +220,7 @@ function generateServiceHTML(serviceData) {
             const readMoreLink = document.createElement('a');
             readMoreLink.classList.add('read-more');
             // Set the initial text content based on the current selected language
-            readMoreLink.textContent = document.getElementById('language-select').value === 'ar' ? 'اقرأ المزيد' : 'Lire la suite';
+            readMoreLink.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire la suite' : 'en' ? 'read more' : 'ar' ? 'اقرأ المزيد' : 'Lire la suite';
             readMoreContainer.appendChild(readMoreLink);
             serviceElement.appendChild(readMoreContainer);
 
@@ -181,9 +228,6 @@ function generateServiceHTML(serviceData) {
             serviceContainer.appendChild(serviceElement);
         });
         
-    } else {
-        // Add a fallback message or action if no service data is available
-        serviceContainer.textContent = "No service data available.";
     }
 }
 
@@ -206,7 +250,7 @@ function handleReadMoreLinks() {
                 service.classList.add(`article${index}`, 'full-width');
                 description.style.opacity = '0';
                 descriptionFull.style.maxHeight = '1000px'; // ou la hauteur maximale nécessaire
-                this.textContent = document.getElementById('language-select').value === 'ar' ? 'اقرأ أقل' : 'Lire moins';
+                this.textContent = document.getElementById('language-select').value === 'fr' ? 'lire moins' : 'en' ? 'read less' : 'ar' ? 'اقرأ أقل' : 'Lire moins';
                 document.body.classList.add('no-scroll');
                 readMoreContainer.style.display = 'flex';
                 readMoreContainer.style.justifyContent = 'center';

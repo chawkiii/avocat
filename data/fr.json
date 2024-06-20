@@ -33,19 +33,19 @@
       {
         "title": "Transactions internationales et droit commercial",
         "image": "images/international.jpg",
-        "description_short": "Vous êtes impliqué dans des transactions internationales ou des activités commerciales à l'échelle mondiale ? Avec mes compétences spécialisées en droit commercial international, je suis là pour vous fournir une expertise juridique adaptée à vos besoins.",
+        "description_short": "Vous êtes impliqué dans des transactions internationales ou des activités commerciales à l'échelle mondiale ? Avec mes compétences spécialisées en droit commercial international, je suis là pour vous fournir une expertise juridique adaptée à vos besoins...",
         "description_long": [
           "Vous êtes impliqué dans des transactions internationales ou des activités commerciales à l'échelle mondiale ? Avec mes compétences spécialisées en droit commercial international, je suis là pour vous fournir une expertise juridique adaptée à vos besoins.",
           "Mon approche proactive et stratégique vous aidera à naviguer avec succès dans le paysage complexe des transactions internationales. Que vous cherchiez à conclure des accords commerciaux transfrontaliers, à négocier des contrats internationaux ou à résoudre des litiges commerciaux à l'échelle mondiale, je suis là pour vous conseiller à chaque étape du processus.",
           "En collaborant avec moi, vous bénéficierez d'un partenaire juridique dévoué qui comprend les nuances du droit international des affaires. Mon objectif est de vous aider à minimiser les risques juridiques tout en maximisant les opportunités commerciales à l'échelle internationale.",
-          "Contactez-moi dès aujourd'hui pour discuter de la manière dont je peux vous aider à mener à bien vos transactions internationales et à protéger vos intérêts commerciaux sur la scène mondiale."
+          "Contactez-moi dès aujourd'hui pour discuter de la manière dont je peux vous aider à mener à bien vos transactions internationales et à protéger vos intérêts commerciaux sur la scène mondiale..."
         ],
         "read_more": "lire plus"
       },
       {
         "title": "Résolution de litiges commerciaux",
         "image": "images/about02.jpg",
-        "description_short": "Les litiges commerciaux peuvent survenir à tout moment dans le monde des affaires. En tant qu'avocat spécialisé dans la résolution de litiges commerciaux, je suis là pour vous aider à trouver des solutions efficaces pour résoudre les différends et protéger vos intérêts commerciaux.",
+        "description_short": "Les litiges commerciaux peuvent survenir à tout moment dans le monde des affaires. En tant qu'avocat spécialisé dans la résolution de litiges commerciaux, je suis là pour vous aider à trouver des solutions efficaces pour résoudre les différends et protéger vos intérêts commerciaux...",
         "description_long": [
           "Les litiges commerciaux peuvent survenir à tout moment dans le monde des affaires. En tant qu'avocat spécialisé dans la résolution de litiges commerciaux, je suis là pour vous aider à trouver des solutions efficaces pour résoudre les différends et protéger vos intérêts commerciaux.",
           "Ma stratégie de résolution de litiges est axée sur la recherche de solutions pragmatiques et rentables. Je travaille en étroite collaboration avec vous pour évaluer vos options légales, élaborer des stratégies de négociation solides et représenter vos intérêts devant les tribunaux si nécessaire.",
@@ -57,7 +57,7 @@
       {
         "title": "Protection des droits de propriété intellectuelle",
         "image": "images/propriete-intellectuelle3.jpg",
-        "description_short": "Assurez-vous que vos créations, inventions et marques sont protégées par la loi. Mon expertise en droit de la propriété intellectuelle vous garantit une protection optimale de vos droits.",
+        "description_short": "Assurez-vous que vos créations, inventions et marques sont protégées par la loi. Mon expertise en droit de la propriété intellectuelle vous garantit une protection optimale de vos droits...",
         "description_long": [
           "Assurez-vous que vos créations, inventions et marques sont protégées par la loi. Mon expertise en droit de la propriété intellectuelle vous garantit une protection optimale de vos droits.",
           "Je vous aide à sécuriser et à défendre vos droits de propriété intellectuelle, que ce soit pour des brevets, des marques, des droits d'auteur ou des secrets commerciaux. Mon objectif est de vous fournir des conseils stratégiques pour maximiser la valeur de vos actifs intellectuels et minimiser les risques de litiges.",
@@ -70,13 +70,7 @@
   },
   "contact": {
     "title": "Contact",
-    "content": [
-      "Vous avez des questions ou souhaitez en savoir plus sur nos services ? N'hésitez pas à nous contacter via le formulaire ci-dessous ou à nous appeler directement.",
-      "Vous pouvez également nous rendre visite à notre bureau:",
-      "123 Rue de la Loi, 75000 Paris, France",
-      "Téléphone : +123456789",
-      "Email : contact@maitrefathi.com"
-    ]
+    "content": "Vous avez des questions ou souhaitez en savoir plus sur nos services ? N'hésitez pas à nous contacter via le formulaire ci-dessous ou à nous appeler directement."
   },
   "footer": {
     "contact_details": [

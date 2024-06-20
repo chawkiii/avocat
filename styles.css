@@ -244,17 +244,7 @@ nav a.active {
 
 
 
-.service a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
 
-.service a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
 
 .cta-button {
     display: flex;
@@ -420,6 +410,7 @@ nav a.active {
     text-align: center;
 }
 
+
 .service-container {
     display: flex;
     flex-wrap: wrap;
@@ -439,6 +430,18 @@ nav a.active {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.service a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.service a:hover {
+    text-decoration: underline;
+}
+
 .read-less {
     display: none;
 }
@@ -547,6 +550,9 @@ nav a.active {
     .full-width img {
         display: none;
     }
+    .full-width a{
+        color: white;
+    }
 }
 
 .service p {
@@ -554,15 +560,7 @@ nav a.active {
     margin-bottom: 20px;
 }
 
-.service a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-}
 
-.service a:hover {
-    text-decoration: underline;
-}
 
 /* Styles pour la section Contact */
 #contact {

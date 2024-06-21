@@ -35,42 +35,49 @@ function initializePageFunctionality() {
 }
 
 function updatePageWithTranslations(data) {
-    // Mettre à jour les éléments de menu
-    document.querySelectorAll('nav a[data-translation-key]').forEach(anchor => {
-        const key = anchor.dataset.translationKey;
-        if (data.menu[key]) {
-            anchor.textContent = data.menu[key];
+    // Vérifiez que les propriétés existent avant de les utiliser
+    if (data.about_us) {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            aboutSection.querySelector('h2').textContent = data.about_us.title || "";
+            aboutSection.querySelectorAll('.about-content p').forEach((p, index) => {
+                p.textContent = data.about_us.content[index] || "";
+            });
+            aboutSection.querySelector('.cta-button').textContent = data.about_us.contact_button || "";
         }
-    });
+    }
 
-    // Mettre à jour les sections about us
-    const aboutSection = document.getElementById('about');
-    aboutSection.querySelector('h2').textContent = data.about_us.title;
-    aboutSection.querySelectorAll('.about-content p').forEach((p, index) => {
-        p.textContent = data.about_us.content[index];
-    });
-    aboutSection.querySelector('.cta-button').textContent = data.about_us.contact_button;
+    if (data.services) {
+        const serviceSection = document.getElementById('service');
+        if (serviceSection) {
+            serviceSection.querySelector('h2').textContent = data.services.title || "";
+            generateServiceHTML(data.services.services || [], data);
+        }
+    }
 
-    // Générer les services à partir des données JSON
-    const serviceSection = document.getElementById('service');
-    serviceSection.querySelector('h2').textContent = data.services.title;
-    generateServiceHTML(data.services.services);
+    if (data.contact) {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.querySelector('h2').textContent = data.contact.title || "";
+            contactSection.querySelector('.contact-content p').textContent = data.contact.content || "";
+        }
+    }
 
-    // Mettre à jour les sections contact
-    const contactSection = document.getElementById('contact');
-    contactSection.querySelector('h2').textContent = data.contact.title;
-    contactSection.querySelector('.contact-content p').textContent = data.contact.content;
-    
+    if (data.footer) {
+        const contactDetails = document.querySelector('footer .contact-details');
+        if (contactDetails) {
+            contactDetails.querySelectorAll('p').forEach((p, index) => {
+                p.textContent = data.footer.contact_details[index] || "";
+            });
+        }
 
-    // Mettre à jour les détails de contact dans le pied de page
-    const contactDetails = document.querySelector('footer .contact-details');
-    contactDetails.querySelectorAll('p').forEach((p, index) => {
-        p.textContent = data.footer.contact_details[index];
-    });
-
-    // Mettre à jour le texte de droits d'auteur dans le pied de page
-    document.querySelector('footer p[data-translation-key="footer.copyright"]').textContent = data.footer.copyright;
+        const copyright = document.querySelector('footer p[data-translation-key="footer.copyright"]');
+        if (copyright) {
+            copyright.textContent = data.footer.copyright || "";
+        }
+    }
 }
+
 
 function handleNavbar() {
     const navBar = document.querySelector('.menu');
@@ -166,7 +173,7 @@ function handleNavLinks() {
 
 // Function to generate HTML for services based on the provided data
 function generateServiceHTML(serviceData) {
-    const serviceContainer = document.querySelector('#service .service-container');
+    const serviceContainer = document.querySelector('.service-container');
     serviceContainer.innerHTML = ''; // Clear the container to avoid duplication
     
     if (serviceData && serviceData.length > 0) { // Check if serviceData is defined and not empty
@@ -183,25 +190,16 @@ function generateServiceHTML(serviceData) {
 
             // Create the image of the service
             const imageElement = document.createElement('img');
-            imageElement.src = service.image; // Make sure your JSON data contains correct paths to the images
+            imageElement.src = service.image; 
             imageElement.alt = service.title;
             serviceElement.appendChild(imageElement);
 
             // Create the short description of the service
             const descriptionElement = document.createElement('div');
             descriptionElement.classList.add('service-description');
-            if (Array.isArray(service.description_short)) {
-                service.description_short.forEach(paragraph => {
-                    const p = document.createElement('p');
-                    p.textContent = paragraph;
-                    descriptionElement.appendChild(p);
-                });
-            } else {
-                // If service.description_short is a string, create a paragraph with its content
-                const p = document.createElement('p');
-                p.textContent = service.description_short;
-                descriptionElement.appendChild(p);
-            }
+            const p = document.createElement('p');
+            p.textContent = service.description_short;
+            descriptionElement.appendChild(p);
             serviceElement.appendChild(descriptionElement);
 
             // Create the full description of the service
@@ -220,7 +218,10 @@ function generateServiceHTML(serviceData) {
             const readMoreLink = document.createElement('a');
             readMoreLink.classList.add('read-more');
             // Set the initial text content based on the current selected language
-            readMoreLink.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire la suite' : 'en' ? 'read more' : 'ar' ? 'اقرأ المزيد' : 'Lire la suite';
+            readMoreLink.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire la suite' : 'en' ? 'Read more' : 'اقرأ المزيد';
+
+            
+
             readMoreContainer.appendChild(readMoreLink);
             serviceElement.appendChild(readMoreContainer);
 
@@ -248,21 +249,13 @@ function handleReadMoreLinks() {
             if (service.classList.contains('reduced')) {
                 service.classList.remove('reduced');
                 service.classList.add(`article${index}`, 'full-width');
-                description.style.opacity = '0';
-                descriptionFull.style.maxHeight = '1000px'; // ou la hauteur maximale nécessaire
-                this.textContent = document.getElementById('language-select').value === 'fr' ? 'lire moins' : 'en' ? 'read less' : 'ar' ? 'اقرأ أقل' : 'Lire moins';
+                this.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire moins' : 'en' ? 'Read less' : 'اقرأ أقل';
                 document.body.classList.add('no-scroll');
-                readMoreContainer.style.display = 'flex';
-                readMoreContainer.style.justifyContent = 'center';
             } else {
                 service.classList.remove(`article${index}`, 'full-width');
                 service.classList.add('reduced');
-                description.style.opacity = '1';
-                descriptionFull.style.maxHeight = '0';
-                this.textContent = document.getElementById('language-select').value === 'ar' ? 'اقرأ المزيد' : 'Lire la suite';
+                this.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire la suite' : 'en' ? 'Read more' : 'اقرأ المزيد';
                 document.body.classList.remove('no-scroll');
-                readMoreContainer.style.display = 'flex';
-                readMoreContainer.style.justifyContent = 'center';
             }
         });
     });

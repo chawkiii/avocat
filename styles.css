@@ -244,35 +244,12 @@ nav a.active {
 
 
 
-.cta-button {
-    display: flex;
-    width: 70%;
-    height: 60px;
-    padding: 10px 20px;
-    margin: 50px auto 20px auto;
-    color: bisque;
-    background-color: brown;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 30px;
-    transition: background-color 0.3s ease;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
-}
 
-.cta-button:hover {
-    background-color: bisque;
-    color: brown;
-    box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.4);
-}
 
 #about {
     background-color: #ddd;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 20px;
+    margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
@@ -312,6 +289,31 @@ h2{
     color: #000;
     font-size: 1em;
     line-height: 1.6;
+}
+
+.cta-button {
+    display: flex;
+    width: 70%;
+    height: 60px;
+    padding: 10px 20px;
+    margin: 50px auto 20px auto;
+    color: bisque;
+    background-color: brown;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button:hover {
+    background-color: bisque;
+    color: brown;
+    box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .socials {
@@ -410,8 +412,9 @@ h2{
 
 #service {
     background-color: #ddd;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
@@ -491,12 +494,8 @@ h2{
 }
 
 .read-more {
-    display: inline-block;
     margin: 10px auto;
-    color: #007bff;
     text-decoration: none;
-    font-weight: bold;
-
 }
 
 .read-more:hover {
@@ -649,9 +648,9 @@ form input, form textarea {
     font-size: 1em;
 }
 
-form button {
+.submitButton {
     padding: 10px 20px;
-    background-color: #333;
+    background-color: gray;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -659,8 +658,8 @@ form button {
     font-size: 1.1em;
 }
 
-form button:hover {
-    background-color: #555;
+.submitButton:hover {
+    background-color: #333;
 }
 
 .map-container {
@@ -711,67 +710,3 @@ footer a:hover {
     color: brown;
 }
 
-
-
-
-
-
-
-
-.scale-container{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    border: solid;
-}
-.weight {
-    width: 100px; 
-    height: 100px; 
-    background-color: transparent;
-    border: solid 5px black; 
-    border-top-left-radius: 0; 
-    border-top-right-radius: 0; 
-    border-bottom-left-radius: 100px; 
-    border-bottom-right-radius: 100px; 
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    position: relative;
-}
-.weight::before{
-    content: "";
-    background-color: #000;
-    width: 4px;
-    height: 50px;
-    border-radius: 2px;
-    position: absolute;
-    bottom: -40px;
-}
-.weight-left::before{
-    transform: rotate(-60deg);
-    right: 30px;
-}
-.weight-right::before{
-    transform: rotate(60deg);
-    left: 30px;
-}
-
-/*
-
-.weight-support{
-    width: 5px;
-    height: 50px;
-    border-radius: 3px;
-    background: #000;
-}
-.weight-support-l{
-    
-}
-.weight-support-r{
-    transform: rotate(60deg);
-}
-.weight-support-h{
-    transform: rotate(90deg);
-}
-
-*/

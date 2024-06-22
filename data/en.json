@@ -70,14 +70,21 @@
   },
   "contact": {
     "title": "Contact",
-    "content": "Do you have any questions or want to learn more about our services? Feel free to contact us via the form below or call us directly."
+    "content": "Do you have any questions or would you like to learn more about our services? Feel free to contact us via the form below, through our social media channels, or call us directly.",
+    "form": {
+      "name_placeholder": "Enter your name",
+      "email_placeholder": "Enter your email address",
+      "phone_placeholder": "Enter your phone number",
+      "message_placeholder": "Enter your message",
+      "submit_button": "Send"
+    }
   },
   "footer": {
     "contact_details": [
-      "Phone: +123456789",
-      "Address: 123 Rue de la Loi, 75000 Paris, France",
+      "Phone: +(213) 561 459 445",
+      "Address: Risidance les rousiers, Hamdani Lahcen, Hydra, Alger",
       "Email: contact@maitrefathi.com"
     ],
-    "copyright": "&copy; 2024 Maître Fathi. All rights reserved."
+    "copyright": "© 2024 Maître Fathi. All rights reserved."
   }
 }

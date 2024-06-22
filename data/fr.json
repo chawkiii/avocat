@@ -70,7 +70,14 @@
   },
   "contact": {
     "title": "Contact",
-    "content": "Vous avez des questions ou souhaitez en savoir plus sur nos services ? N'hésitez pas à nous contacter via le formulaire ci-dessous ou à nous appeler directement."
+    "content": "Vous avez des questions ou souhaitez en savoir plus sur nos services ? N'hésitez pas à nous contacter via le formulaire ci-dessous, ou par le biais de nos réseaux sociaux, ou appelez-nous directement.",
+    "form": {
+      "name_placeholder": "Entrez votre nom",
+      "email_placeholder": "Entrez votre adresse email",
+      "phone_placeholder": "Entrez votre numéro de téléphone",
+      "message_placeholder": "Entrez votre message",
+      "submit_button": "Envoyer"
+    }
   },
   "footer": {
     "contact_details": [

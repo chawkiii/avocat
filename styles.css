@@ -11,8 +11,14 @@ html {
 body {
     background: bisque;
 }
+
 .no-scroll {
     overflow: hidden;
+}
+
+.rtl {
+    direction: rtl;
+    text-align: right;
 }
 
 #accueil {
@@ -48,6 +54,7 @@ body {
 }
 
 #language-select {
+    appearance: none;
     padding: 8px;
     height: 50px;
     width: 100%;
@@ -320,6 +327,8 @@ h2{
     display: inline-flex;
     list-style: none;
     margin-top: 10px;
+    direction: ltr;
+    text-align: left;
 }
 .socials .icon{
     position: relative;
@@ -583,7 +592,7 @@ h2{
     padding: 30px;
     background-color: #ddd;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     display: flex;
@@ -646,6 +655,7 @@ form input, form textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
+    resize: none;
 }
 
 .submitButton {
@@ -690,23 +700,23 @@ form input, form textarea {
 
 /* Styles pour le Footer */
 footer {
-    padding: 20px;
+    padding: 10px;
     background-color: #000;
     color: bisque;
     text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
-
+.contact-details{
+    border-bottom: solid 1px bisque;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 footer p {
     margin: 0;
     font-size: 1em;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: brown;
 }
 

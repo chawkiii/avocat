@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Générer langue par défaut (français) au chargement de la page
-    generateLanguageData('fr');
-
+    generateLanguageData('fr'); // lang fr par defaut
+    handleNavbar(); // element nav noir
     activateHomeLink(); // Activer "Accueil" par défaut
     updateActiveNavLink(); // Mettre à jour les liens actifs
 
@@ -9,11 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('language-select').addEventListener('change', function() {
         const selectedLang = this.value;
         generateLanguageData(selectedLang);
+        updateTextDirection(selectedLang); // Mettre à jour la direction du texte
     });
+
 });
 
-// Écouter le défilement de la fenêtre pour mettre à jour les liens actifs
-window.addEventListener('scroll', updateActiveNavLink);
+
 
 function generateLanguageData(lang) {
     // Charger les données de langue à partir du fichier JSON par défaut
@@ -35,48 +35,40 @@ function initializePageFunctionality() {
 }
 
 function updatePageWithTranslations(data) {
-    // Vérifiez que les propriétés existent avant de les utiliser
-    if (data.about_us) {
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-            aboutSection.querySelector('h2').textContent = data.about_us.title || "";
-            aboutSection.querySelectorAll('.about-content p').forEach((p, index) => {
-                p.textContent = data.about_us.content[index] || "";
-            });
-            aboutSection.querySelector('.cta-button').textContent = data.about_us.contact_button || "";
-        }
-    }
+    // About section
+    const aboutSection = document.getElementById('about');
+    aboutSection.querySelector('h2').textContent = data.about_us.title;
+    aboutSection.querySelectorAll('.about-content p').forEach((p, index) => {
+        p.textContent = data.about_us.content[index];
+    });
+    aboutSection.querySelector('.cta-button').textContent = data.about_us.contact_button;
+        
+    // service section
+    const serviceSection = document.getElementById('service');    
+    serviceSection.querySelector('h2').textContent = data.services.title;
+    generateServiceHTML(data.services.services);
 
-    if (data.services) {
-        const serviceSection = document.getElementById('service');
-        if (serviceSection) {
-            serviceSection.querySelector('h2').textContent = data.services.title || "";
-            generateServiceHTML(data.services.services || [], data);
-        }
-    }
+    // contact section
+    const contactSection = document.getElementById('contact');
+    contactSection.querySelector('h2').textContent = data.contact.title;
+    contactSection.querySelector('.contact-content p').textContent = data.contact.content;
 
-    if (data.contact) {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            contactSection.querySelector('h2').textContent = data.contact.title || "";
-            contactSection.querySelector('.contact-content p').textContent = data.contact.content || "";
-        }
-    }
+    // Update placeholders in the contact form
+    document.getElementById('name').placeholder = data.contact.form.name_placeholder;
+    document.getElementById('email').placeholder = data.contact.form.email_placeholder;
+    document.getElementById('phone').placeholder = data.contact.form.phone_placeholder;
+    document.getElementById('message').placeholder = data.contact.form.message_placeholder;
+    document.querySelector('.submitButton').value = data.contact.form.submit_button;
 
-    if (data.footer) {
-        const contactDetails = document.querySelector('footer .contact-details');
-        if (contactDetails) {
-            contactDetails.querySelectorAll('p').forEach((p, index) => {
-                p.textContent = data.footer.contact_details[index] || "";
-            });
-        }
-
-        const copyright = document.querySelector('footer p[data-translation-key="footer.copyright"]');
-        if (copyright) {
-            copyright.textContent = data.footer.copyright || "";
-        }
-    }
+    // footer section
+    const contactDetails = document.querySelector('footer .contact-details');
+    contactDetails.querySelectorAll('p').forEach((p, index) => {
+        p.textContent = data.footer.contact_details[index];
+    });
+    const copyright = document.querySelector('footer p[data-translation-key="footer.copyright"]');
+    copyright.textContent = data.footer.copyright;
 }
+
 
 
 function handleNavbar() {
@@ -131,7 +123,6 @@ function activateHomeLink() {
     homeLink.classList.add('active');
 }
 
-
 function handleNavLinks() {
     // Sélectionnez tous les éléments de navigation, y compris le bouton CTA dans la section #about
     const navLinks = document.querySelectorAll('nav a[data-translation-key], .cta-button');
@@ -140,15 +131,9 @@ function handleNavLinks() {
         link.addEventListener('click', function (e) {
             e.preventDefault();
             let target;
+            target = document.querySelector(this.getAttribute('href'));
 
-            // Vérifiez si l'élément cliqué est le bouton CTA
-            if (this.classList.contains('cta-button')) {
-                // Si c'est le cas, définissez la cible sur la section #contact
-                target = document.querySelector(this.getAttribute('href'));
-            } else {
-                // Sinon, définissez la cible sur l'élément correspondant à l'attribut href
-                target = document.querySelector(this.getAttribute('href'));
-            }
+            
 
             // Calculer la position de la cible
             const navbarHeight = document.querySelector('.menu').offsetHeight;
@@ -165,12 +150,6 @@ function handleNavLinks() {
         });
     });
 }
-
-
-
-
-
-
 // Function to generate HTML for services based on the provided data
 function generateServiceHTML(serviceData) {
     const serviceContainer = document.querySelector('.service-container');
@@ -218,10 +197,7 @@ function generateServiceHTML(serviceData) {
             const readMoreLink = document.createElement('a');
             readMoreLink.classList.add('read-more');
             // Set the initial text content based on the current selected language
-            readMoreLink.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire la suite' : 'en' ? 'Read more' : 'اقرأ المزيد';
-
-            
-
+            readMoreLink.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire la suite' : document.getElementById('language-select').value === 'en' ? 'Read more' : 'اقرأ المزيد';
             readMoreContainer.appendChild(readMoreLink);
             serviceElement.appendChild(readMoreContainer);
 
@@ -231,9 +207,6 @@ function generateServiceHTML(serviceData) {
         
     }
 }
-
-
-
 
 function handleReadMoreLinks() {
     // Gestion des liens "Lire la suite" pour les services
@@ -249,22 +222,27 @@ function handleReadMoreLinks() {
             if (service.classList.contains('reduced')) {
                 service.classList.remove('reduced');
                 service.classList.add(`article${index}`, 'full-width');
-                this.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire moins' : 'en' ? 'Read less' : 'اقرأ أقل';
+                this.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire moins' : document.getElementById('language-select').value === 'en' ? 'Read less' : 'اقرأ أقل';
                 document.body.classList.add('no-scroll');
             } else {
                 service.classList.remove(`article${index}`, 'full-width');
                 service.classList.add('reduced');
-                this.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire la suite' : 'en' ? 'Read more' : 'اقرأ المزيد';
+                this.textContent = document.getElementById('language-select').value === 'fr' ? 'Lire la suite' : document.getElementById('language-select').value === 'en' ? 'Read more' : 'اقرأ المزيد';
                 document.body.classList.remove('no-scroll');
             }
         });
     });
 }
 
-
-
 function handleBurgerMenu() {
     document.querySelector('.burger-container').addEventListener('click', function() {
         document.querySelector('.menu').classList.toggle('active');
     });
+}
+
+// Function to update text direction based on selected language
+function updateTextDirection(lang) {
+    const dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.setAttribute('dir', dir);
+    document.body.style.direction = dir;
 }

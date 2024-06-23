@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Avocat</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "siv_zksuKAa35s_QR",
+            });
+        })();
+    </script>
 </head>
 <body>
     <header id="accueil">
@@ -88,13 +98,12 @@
                 <p data-translation-key="contact.content"></p>
                 <div class="form-map-container">
                     
-                    <form action="mailto:fethi@zegadi.com" method="POST" enctype="text/plain">
-                        <h3 data-translation-key="contact.contact_form"></h3>
-                        <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
-                        <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
+                    <form id="contactForm">
+                        <input type="text" id="name" name="name" required>
+                        <input type="email" id="email" name="email" required>
                         <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" required>
                         <textarea id="message" name="message" rows="4" placeholder="Entrez votre message" required></textarea>
-                        <input class="submitButton" type="submit" value="Envoyer">
+                        <button class="submitButton" type="submit"></button>
                     </form>
                     
                     

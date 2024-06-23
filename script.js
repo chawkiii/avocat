@@ -11,9 +11,33 @@ document.addEventListener("DOMContentLoaded", function() {
         updateTextDirection(selectedLang); // Mettre à jour la direction du texte
     });
 
+    // Attach the sendMail function to the form submit event
+    document.getElementById("contactForm").addEventListener("submit", sendMail);
 });
 
+function sendMail(event){
+    event.preventDefault(); 
 
+    let params = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        phone : document.getElementById("phone").value,
+        message : document.getElementById("message").value,
+    }
+
+    // Check if all required fields are filled
+    if (params.name && params.email && params.phone && params.message) {
+        emailjs.send("service_kd8w2sd","template_taayr2g", params)
+            .then(() => {
+                alert("Email envoyé avec succès !");
+            }, (error) => {
+                console.log('FAILED...', error);
+                alert("Une erreur s'est produite lors de l'envoi de l'e-mail.");
+            });
+    } else {
+        alert("Veuillez remplir tous les champs.");
+    }
+}
 
 function generateLanguageData(lang) {
     // Charger les données de langue à partir du fichier JSON par défaut
@@ -58,7 +82,7 @@ function updatePageWithTranslations(data) {
     document.getElementById('email').placeholder = data.contact.form.email_placeholder;
     document.getElementById('phone').placeholder = data.contact.form.phone_placeholder;
     document.getElementById('message').placeholder = data.contact.form.message_placeholder;
-    document.querySelector('.submitButton').value = data.contact.form.submit_button;
+    document.querySelector('.submitButton').textContent = data.contact.form.submit_button;
 
     // footer section
     const contactDetails = document.querySelector('footer .contact-details');
@@ -246,3 +270,4 @@ function updateTextDirection(lang) {
     document.documentElement.setAttribute('dir', dir);
     document.body.style.direction = dir;
 }
+

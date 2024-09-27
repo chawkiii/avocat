@@ -21,6 +21,7 @@ body {
     text-align: right;
 }
 
+/************* header **************/
 #accueil {
     background-image: url(images/header.jpg);
     background-repeat: no-repeat;
@@ -37,6 +38,8 @@ body {
     list-style: none;
 }
 
+
+/***********  nav  **************/
 .menu {
     position: fixed;
     display: flex;

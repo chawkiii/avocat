@@ -27,7 +27,7 @@ function sendMail(event){
 
     // Check if all required fields are filled
     if (params.name && params.email && params.phone && params.message) {
-        emailjs.send("service_kd8w2sd","template_taayr2g", params)
+        emailjs.send("service_kd8w2sd","template_ou5k3wk", params)
             .then(() => {
                 alert("Email envoyé avec succès !");
             }, (error) => {

@@ -197,15 +197,7 @@ nav a.active {
 }
 
 
-
-
-
-
-
-
-
-
-
+/*************** About section *****************/
 #about {
     background-color: #ddd;
     padding: 20px 0 0 0;
@@ -256,6 +248,7 @@ h2{
 .cta-button {
     display: flex;
     width: 80%;
+    max-width: 900px;
     height: 70px;
     padding: 10px 20px;
     margin: 50px auto 20px auto;
@@ -279,11 +272,17 @@ h2{
 }
 
 .socials {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
     margin: 20px auto;
     direction: ltr;
     text-align: left;
+    width: 100%;
+    max-width: 900px;
 }
 .socials .icon{
     position: relative;
@@ -292,8 +291,8 @@ h2{
     border-radius: 50%;
     padding: 15px;
     margin: 10px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     font-size: 1.2em;
     display: flex;
     justify-content: center;
@@ -378,7 +377,7 @@ h2{
 
 
 
-
+/************ Service Section ************/
 #service {
     background-color: #ddd;
     padding: 20px;
@@ -506,9 +505,9 @@ h2{
 
 
 
-/* Styles pour la section Contact */
+/************* contact section ***************/
 #contact {
-    padding: 30px;
+    padding-top: 30px;
     background-color: #ddd;
     text-align: center;
     margin-bottom: 20px;
@@ -533,7 +532,7 @@ h2{
     flex-direction: column;
     margin: 0 auto;
     text-align: justify;
-    min-width: 425px;
+    width: 100%;
 }
 
 .contact-content p {

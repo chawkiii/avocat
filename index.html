@@ -1,160 +1,219 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Maître Chawki, avocat spécialisé en droit des affaires et droit international, offre des conseils juridiques aux entreprises et politiciens. Expertise en litiges commerciaux, notamment avec la Chine.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta description pour SEO -->
+    <meta
+      name="description"
+      content="Maître Chawki, avocat spécialisé en droit des affaires et droit international, offre des conseils juridiques aux entreprises et politiciens. Expertise en litiges commerciaux, notamment avec la Chine."
+    />
+
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Font Awesome pour les icônes sociales -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Titre de la page -->
     <title>Avocat</title>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+
+    <!-- Script pour EmailJS (envoi d'emails via formulaire) -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <script type="text/javascript">
-        (function(){
-            emailjs.init({
-                publicKey: "siv_zksuKAa35s_QR",
-            });
-        })();
+      (function () {
+        emailjs.init({
+          publicKey: "siv_zksuKAa35s_QR",
+        });
+      })();
     </script>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Header et navigation -->
     <header id="accueil">
-        <nav class="menu">
-            <input id="menu-toggle" type="checkbox" />
-            <label class='burger-container' for="menu-toggle">
-                <div class='burger-element'></div>
-            </label>
-            <ul class="menu_nav">
-                <li><a href="#accueil" data-translation-key="menu.home">Accueil</a></li>
-                <li><a href="#about" data-translation-key="menu.about_us">À propos</a></li>
-                <li><a href="#service" data-translation-key="menu.services">Services</a></li>
-                <li><a href="#contact" data-translation-key="menu.contact">Contact</a></li>
-                <li class="language-switcher">
-                    <select id="language-select">
-                        <option value="fr" data-translation-key="menu.french">Français</option>
-                        <option value="en" data-translation-key="menu.english">English</option>
-                        <option value="ar" data-translation-key="menu.arabic">العربية</option>
-                    </select>
-                </li>
-            </ul>
-        </nav>
+      <nav class="menu">
+        <!-- Menu burger pour mobile -->
+        <input id="menu-toggle" type="checkbox" />
+        <label class="burger-container" for="menu-toggle">
+          <div class="burger-element"></div>
+        </label>
 
-        <div class="titles">
-            <h1 class="main_title">MAITRE CHAWKI<br>Avocat à la cour</h1>
-        </div>
+        <!-- Liens de navigation -->
+        <ul class="menu_nav">
+          <li>
+            <a href="#accueil" data-translation-key="menu.home">Accueil</a>
+          </li>
+          <li>
+            <a href="#about" data-translation-key="menu.about_us">À propos</a>
+          </li>
+          <li>
+            <a href="#service" data-translation-key="menu.services">Services</a>
+          </li>
+          <li>
+            <a href="#contact" data-translation-key="menu.contact">Contact</a>
+          </li>
+          <!-- Sélecteur de langue -->
+          <li class="language-switcher">
+            <select id="language-select">
+              <option value="fr" data-translation-key="menu.french">
+                Français
+              </option>
+              <option value="en" data-translation-key="menu.english">
+                English
+              </option>
+              <option value="ar" data-translation-key="menu.arabic">
+                العربية
+              </option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Titre principal du site -->
+      <div class="titles">
+        <h1 class="main_title">MAITRE CHAWKI<br />Avocat à la cour</h1>
+      </div>
     </header>
-    
+
+    <!-- Contenu principal -->
     <main>
-        <section id="about">
-            <h2 data-translation-key="about_us.title"></h2>
-            <div class="about-content">
-                <img src="images/about03.jpg" alt="A propos de nous">
-                <p data-translation-key="about_us.content.0"></p>
-                <p data-translation-key="about_us.content.1"></p>
-                <p data-translation-key="about_us.content.2"></p>
-                <p data-translation-key="about_us.content.3"></p>
-                <a href="#contact" class="cta-button" data-translation-key="about_us.contact_button"></a>
-                <ul class="socials">
-                    <a href="https://www.facebook.com/">
-                        <li class="icon facebook">
-                            <span class="tooltip">Facebook</span>
-                            <span><i class="fa fa-facebook"></i></span>
-                        </li>
-                    </a>
-                    <a href="https://www.whatsapp.com/">
-                        <li class="icon whatsapp">
-                            <span class="tooltip">Whatsapp</span>
-                            <span><i class="fa fa-whatsapp"></i></span>
-                        </li>
-                    </a>
-                    <a href="https://www.google.com/">
-                        <li class="icon gmail">
-                            <span class="tooltip">Gmail</span>
-                            <span><i class="fa fa-google"></i></span>    
-                        </li>
-                    </a>
-                    <a href="https://www.linkedin.com/">
-                        <li class="icon linkedin">
-                            <span class="tooltip">Linkedin</span>
-                            <span><i class="fa fa-linkedin"></i></span>
-                        </li>
-                    </a>
-                </ul>            
+      <!-- Section À propos -->
+      <section id="about">
+        <h2 data-translation-key="about_us.title"></h2>
+        <div class="about-content">
+          <img src="images/about03.jpg" alt="A propos de nous" />
+          <p data-translation-key="about_us.content.0"></p>
+          <p data-translation-key="about_us.content.1"></p>
+          <p data-translation-key="about_us.content.2"></p>
+          <p data-translation-key="about_us.content.3"></p>
+          <!-- Bouton CTA vers contact -->
+          <a
+            href="#contact"
+            class="cta-button"
+            data-translation-key="about_us.contact_button"
+          ></a>
+
+          <!-- Icônes sociales -->
+          <ul class="socials">
+            <a href="https://www.facebook.com/">
+              <li class="icon facebook">
+                <span class="tooltip">Facebook</span>
+                <span><i class="fa fa-facebook"></i></span>
+              </li>
+            </a>
+            <a href="https://www.whatsapp.com/">
+              <li class="icon whatsapp">
+                <span class="tooltip">Whatsapp</span>
+                <span><i class="fa fa-whatsapp"></i></span>
+              </li>
+            </a>
+            <a href="https://www.google.com/">
+              <li class="icon gmail">
+                <span class="tooltip">Gmail</span>
+                <span><i class="fa fa-google"></i></span>
+              </li>
+            </a>
+            <a href="https://www.linkedin.com/">
+              <li class="icon linkedin">
+                <span class="tooltip">Linkedin</span>
+                <span><i class="fa fa-linkedin"></i></span>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section Services -->
+      <section id="service">
+        <h2 data-translation-key="services.title"></h2>
+        <div class="service-container"></div>
+      </section>
+
+      <!-- Section Contact avec carte Google Maps -->
+      <section id="contact">
+        <h2 data-translation-key="contact.title"></h2>
+        <div class="contact-content">
+          <p data-translation-key="contact.content"></p>
+          <div class="form-map-container">
+            <!-- Formulaire de contact -->
+            <form id="contactForm">
+              <input type="text" id="name" name="name" required />
+              <input type="email" id="email" name="email" required />
+              <input type="tel" id="phone" name="phone" required />
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+              <button class="submitButton" type="submit"></button>
+            </form>
+
+            <!-- Carte Google Maps -->
+            <div class="map-container">
+              <h3 data-translation-key="contact.address"></h3>
+              <div id="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18429.192440790997!2d3.0084003188021784!3d36.73687181900608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fadf13159175b%3A0x32a4f51b6f28f822!2zUmlzaWRhbmNlIGxlcyByb3VzaWVycyDYpdmC2KfZhdipINin2YTZiNix2YjYrw!5e0!3m2!1sfr!2sdz!4v1715987502425!5m2!1sfr!2sdz"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
 
-        </section>
-
-        <section id="service">
-            <h2 data-translation-key="services.title"></h2>
-            <div class="service-container"></div>
-        </section>
-
-        <section id="contact">
-            <h2 data-translation-key="contact.title"></h2>
-            <div class="contact-content">
-                <p data-translation-key="contact.content"></p>
-                <div class="form-map-container">
-                    
-                    <form id="contactForm">
-                        <input type="text" id="name" name="name" required>
-                        <input type="email" id="email" name="email" required>
-                        <input type="tel" id="phone" name="phone" required>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                        <button class="submitButton" type="submit"></button>
-                    </form>
-                    
-                    
-
-                    <div class="map-container">
-                        <h3 data-translation-key="contact.address"></h3>
-                        <div id="map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18429.192440790997!2d3.0084003188021784!3d36.73687181900608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fadf13159175b%3A0x32a4f51b6f28f822!2zUmlzaWRhbmNlIGxlcyByb3VzaWVycyDYpdmC2KfZhdipINin2YTZiNix2YjYrw!5e0!3m2!1sfr!2sdz!4v1715987502425!5m2!1sfr!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></iframe>
-                        </div>
-                    </div>
-
-                    <ul class="socials">
-                        <a href="https://www.facebook.com/">
-                            <li class="icon facebook">
-                                <span class="tooltip">Facebook</span>
-                                <span><i class="fa fa-facebook"></i></span>
-                            </li>
-                        </a>
-                        <a href="https://www.whatsapp.com/">
-                            <li class="icon whatsapp">
-                                <span class="tooltip">Whatsapp</span>
-                                <span><i class="fa fa-whatsapp"></i></span>
-                            </li>
-                        </a>
-                        <a href="https://www.google.com/">
-                            <li class="icon gmail">
-                                <span class="tooltip">Gmail</span>
-                                <span><i class="fa fa-google"></i></span>    
-                            </li>
-                        </a>
-                        <a href="https://www.linkedin.com/">
-                            <li class="icon linkedin">
-                                <span class="tooltip">Linkedin</span>
-                                <span><i class="fa fa-linkedin"></i></span>
-                            </li>
-                        </a>
-                    </ul>   
-
-                </div>
-                
-            </div>
-        </section>
+            <!-- Réseaux sociaux dans la section Contact -->
+            <ul class="socials">
+              <a href="https://www.facebook.com/">
+                <li class="icon facebook">
+                  <span class="tooltip">Facebook</span>
+                  <span><i class="fa fa-facebook"></i></span>
+                </li>
+              </a>
+              <a href="https://www.whatsapp.com/">
+                <li class="icon whatsapp">
+                  <span class="tooltip">Whatsapp</span>
+                  <span><i class="fa fa-whatsapp"></i></span>
+                </li>
+              </a>
+              <a href="https://www.google.com/">
+                <li class="icon gmail">
+                  <span class="tooltip">Gmail</span>
+                  <span><i class="fa fa-google"></i></span>
+                </li>
+              </a>
+              <a href="https://www.linkedin.com/">
+                <li class="icon linkedin">
+                  <span class="tooltip">Linkedin</span>
+                  <span><i class="fa fa-linkedin"></i></span>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="contact-details">
-            <p data-translation-key="footer.phone"></p>
-            <p data-translation-key="footer.address"></p>
-            <p data-translation-key="footer.email"></p>
-        </div>
-        <p data-translation-key="footer.copyright"></p>
+      <div class="contact-details">
+        <p data-translation-key="footer.phone"></p>
+        <p data-translation-key="footer.address"></p>
+        <p data-translation-key="footer.email"></p>
+      </div>
+      <p data-translation-key="footer.copyright"></p>
     </footer>
 
+    <!-- Script JavaScript pour gestion des interactions -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
